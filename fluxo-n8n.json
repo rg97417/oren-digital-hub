@@ -1,0 +1,479 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "afe7fddb-ed61-mentoria-RG",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -224,
+        -96
+      ],
+      "id": "588062e8-645e-4187-bff8-018bba46c6f7",
+      "name": "Webhook",
+      "webhookId": "afe7fddb-ed61-4650-bcd8-efb11c01ffc3"
+    },
+    {
+      "parameters": {
+        "dataType": "string",
+        "value1": "={{ $json.event }}",
+        "rules": {
+          "rules": [
+            {
+              "value2": "completed"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [
+        416,
+        -128
+      ],
+      "id": "b8f9ae21-57db-4750-bdd5-30899bba7455",
+      "name": "Finalizado?"
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "dataTableId": {
+          "__rl": true,
+          "value": "qViVy9vbBitUOLoJ",
+          "mode": "list",
+          "cachedResultName": "mentoria-rg"
+        },
+        "filters": {
+          "conditions": [
+            {
+              "keyName": "sessionId",
+              "keyValue": "={{ $json.sessionId }}"
+            }
+          ]
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "sessionId": "={{ $json.sessionId }}",
+            "event": "={{ $json.event }}",
+            "step": "={{ $json.step }}",
+            "stepName": "={{ $json.stepName }}",
+            "startedAt": "={{ $json.startedAt }}",
+            "nome": "={{ $json.nome }}",
+            "whatsapp": "={{ $json.whatsapp }}",
+            "email": "={{ $json.email }}",
+            "instagram": "={{ $json.instagram }}",
+            "perfil": "={{ $json.perfil }}",
+            "objetivo": "={{ $json.objetivo }}",
+            "momento": "={{ $json.momento }}",
+            "gargalo": "={{ $json.gargalo }}",
+            "horasSemana": "={{ $json.horasSemana }}",
+            "inicio": "={{ $json.inicio }}",
+            "formato": "={{ $json.formato }}",
+            "faixa": "={{ $json.faixa }}",
+            "porque": "={{ $json.porque }}"
+          },
+          "matchingColumns": [
+            "sessionId"
+          ],
+          "schema": [
+            {
+              "id": "sessionId",
+              "displayName": "sessionId",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "event",
+              "displayName": "event",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "step",
+              "displayName": "step",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "stepName",
+              "displayName": "stepName",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "startedAt",
+              "displayName": "startedAt",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "nome",
+              "displayName": "nome",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "whatsapp",
+              "displayName": "whatsapp",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "email",
+              "displayName": "email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "instagram",
+              "displayName": "instagram",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "perfil",
+              "displayName": "perfil",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "objetivo",
+              "displayName": "objetivo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "momento",
+              "displayName": "momento",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "gargalo",
+              "displayName": "gargalo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "horasSemana",
+              "displayName": "horasSemana",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "inicio",
+              "displayName": "inicio",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "formato",
+              "displayName": "formato",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "faixa",
+              "displayName": "faixa",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            },
+            {
+              "id": "porque",
+              "displayName": "porque",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "readOnly": false,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.dataTable",
+      "typeVersion": 1.1,
+      "position": [
+        208,
+        -96
+      ],
+      "id": "4d126327-d074-40bf-af2d-395faaff97a7",
+      "name": "Salvar Tabela"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "sessionId",
+              "value": "={{ $json.body.sessionId }}"
+            },
+            {
+              "name": "event",
+              "value": "={{ $json.body.event }}"
+            },
+            {
+              "name": "stepName",
+              "value": "={{ $json.body.stepName }}"
+            },
+            {
+              "name": "startedAt",
+              "value": "={{ $json.body.startedAt }}"
+            },
+            {
+              "name": "nome",
+              "value": "={{ $json.body.data.nome }}"
+            },
+            {
+              "name": "whatsapp",
+              "value": "={{ $json.body.data.whatsapp }}"
+            },
+            {
+              "name": "email",
+              "value": "={{ $json.body.data.email }}"
+            },
+            {
+              "name": "instagram",
+              "value": "={{ $json.body.data.instagram }}"
+            },
+            {
+              "name": "perfil",
+              "value": "={{ $json.body.data.perfil }}"
+            },
+            {
+              "name": "objetivo",
+              "value": "={{ $json.body.data.objetivo }}"
+            },
+            {
+              "name": "momento",
+              "value": "={{ $json.body.data.momento }}"
+            },
+            {
+              "name": "gargalo",
+              "value": "={{ $json.body.data.gargalo }}"
+            },
+            {
+              "name": "horasSemana",
+              "value": "={{ $json.body.data.horasSemana }}"
+            },
+            {
+              "name": "inicio",
+              "value": "={{ $json.body.data.inicio }}"
+            },
+            {
+              "name": "formato",
+              "value": "={{ $json.body.data.formato }}"
+            },
+            {
+              "name": "faixa",
+              "value": "={{ $json.body.data.faixa }}"
+            },
+            {
+              "name": "porque",
+              "value": "={{ $json.body.data.porque }}"
+            }
+          ],
+          "number": [
+            {
+              "name": "step",
+              "value": "={{ $json.body.step }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        16,
+        -96
+      ],
+      "id": "1b5ce7ca-2306-4fc5-b65b-2bc36dba78b7",
+      "name": "Organizar Dados"
+    },
+    {
+      "parameters": {
+        "jsCode": "const d = $json;\n\nconst msg = `🎯 *Nova Aplicação de Mentoria!*\n\n` +\n  `👤 *Nome:* ${d.nome}\n` +\n  `📱 *WhatsApp:* ${d.whatsapp}\n` +\n  `📧 *E-mail:* ${d.email}\n` +\n  `📸 *Instagram:* @${d.instagram}\n\n` +\n  `━━━━━━━━━━━━━━━━━━━━\n` +\n  `📋 *Respostas do Formulário*\n` +\n  `━━━━━━━━━━━━━━━━━━━━\n\n` +\n  `🙋 *Perfil:* ${d.perfil}\n` +\n  `🎯 *Objetivo:* ${d.objetivo}\n` +\n  `📍 *Momento atual:* ${d.momento}\n` +\n  `🚧 *Gargalo:* ${d.gargalo}\n` +\n  `⏰ *Horas por semana:* ${d.horasSemana}\n` +\n  `🚀 *Quando quer começar:* ${d.inicio}\n` +\n  `📦 *Formato preferido:* ${d.formato}\n` +\n  `💰 *Faixa de investimento:* ${d.faixa}\n` +\n  `💬 *Por que quer a mentoria:*\n${d.porque}\n\n` +\n  `━━━━━━━━━━━━━━━━━━━━\n` +\n  `🕐 *Iniciou em:* ${new Date(d.startedAt).toLocaleString('pt-BR', {timeZone: 'America/Sao_Paulo'})}\n` +\n  `✅ *Sessão:* ${d.sessionId}`;\n\nreturn [{ json: { message: msg, phone: d.whatsapp } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [640, -128],
+      "id": "code-whatsapp-msg",
+      "name": "Montar Mensagem"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Organizar Dados",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Salvar Tabela": {
+      "main": [
+        [
+          {
+            "node": "Finalizado?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Organizar Dados": {
+      "main": [
+        [
+          {
+            "node": "Salvar Tabela",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Finalizado?": {
+      "main": [
+        [
+          {
+            "node": "Montar Mensagem",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {
+    "Webhook": [
+      {
+        "headers": {
+          "host": "webhook.dnaiclub.com",
+          "user-agent": "node",
+          "content-length": "707",
+          "accept": "*/*",
+          "accept-encoding": "br, gzip, deflate",
+          "accept-language": "*",
+          "content-type": "application/json",
+          "sec-fetch-mode": "cors",
+          "x-forwarded-for": "200.106.193.172",
+          "x-forwarded-host": "webhook.dnaiclub.com",
+          "x-forwarded-port": "443",
+          "x-forwarded-proto": "https",
+          "x-forwarded-server": "9c1c7289a227",
+          "x-real-ip": "200.106.193.172"
+        },
+        "params": {},
+        "query": {},
+        "body": {
+          "source": "linkbio-application",
+          "sessionId": "mp2uc7wg-o651x410",
+          "event": "completed",
+          "step": 9,
+          "stepName": "final",
+          "data": {
+            "nome": "Renan Galhardo",
+            "whatsapp": "11974178200",
+            "email": "renan.galhardo@gmail.com",
+            "instagram": "orenangalhardo",
+            "perfil": "Tenho uma ideia e quero tirar do papel",
+            "objetivo": "Validar ou estruturar uma ideia",
+            "momento": "Ainda estou validando a ideia",
+            "gargalo": "Acho que dificultade em como fazer.. ",
+            "horasSemana": "Menos de 5 horas",
+            "inicio": "Imediatamente",
+            "formato": "Acompanhamento técnico por 30 dias",
+            "faixa": "Quero entender primeiro o melhor formato",
+            "porque": "Acho que voce tem bastante experiencia "
+          },
+          "startedAt": "2026-05-12T16:24:19.456Z",
+          "updatedAt": "2026-05-12T16:40:02.945Z"
+        },
+        "webhookUrl": "https://webhook.dnaiclub.com/webhook/afe7fddb-ed61-mentoria-RG",
+        "executionMode": "production"
+      }
+    ]
+  },
+  "meta": {
+    "instanceId": "09a660bdb79296d37ad47d1578eb23bcb1ea4c7c5d15403f1de22c7821f9d616"
+  }
+}
