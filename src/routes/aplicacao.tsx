@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useServerFn } from "@tanstack/react-start";
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Loader2, Sparkles } from "lucide-react";
 import { sendApplicationEvent } from "@/lib/application.functions";
@@ -81,7 +81,7 @@ function genId() {
 }
 
 function ApplicationPage() {
-  const send = useServerFn(sendApplicationEvent);
+
   const [step, setStep] = useState(0);
   const [form, setForm] = useState<FormState>(initialState);
   const [submitting, setSubmitting] = useState(false);
@@ -127,7 +127,7 @@ function ApplicationPage() {
   async function track(event: "started" | "step" | "completed", currentStep: number) {
     if (!sessionRef.current) return;
     try {
-      await send({
+      await sendApplicationEvent({
         data: {
           sessionId: sessionRef.current,
           event,
