@@ -128,15 +128,13 @@ function ApplicationPage() {
     if (!sessionRef.current) return;
     try {
       await sendApplicationEvent({
-        data: {
-          sessionId: sessionRef.current,
-          event,
-          step: currentStep,
-          stepName: STEP_NAMES[currentStep] ?? String(currentStep),
-          data: form,
-          startedAt: startedAtRef.current,
-          updatedAt: new Date().toISOString(),
-        },
+        sessionId: sessionRef.current,
+        event,
+        step: currentStep,
+        stepName: STEP_NAMES[currentStep] ?? String(currentStep),
+        data: form,
+        startedAt: startedAtRef.current,
+        updatedAt: new Date().toISOString(),
       });
     } catch (e) {
       console.error("track error", e);
