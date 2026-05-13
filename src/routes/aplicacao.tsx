@@ -204,7 +204,7 @@ function ApplicationPage() {
   }, [step, form]);
 
   return (
-    <main className="relative mx-auto flex min-h-dvh w-full max-w-xl flex-col px-5 pb-16 pt-8 sm:px-6 sm:pt-12">
+    <main className="relative mx-auto flex min-h-dvh w-full max-w-xl flex-col px-6 pb-16 pt-8 sm:px-8 sm:pt-12" style={{ paddingLeft: 'max(1.5rem, env(safe-area-inset-left))', paddingRight: 'max(1.5rem, env(safe-area-inset-right))' }}>
       {/* Top bar */}
       <div className="mb-6 flex items-center justify-between">
         <Link

@@ -85,6 +85,7 @@
       radial-gradient(ellipse 600px 500px at 10% 90%, oklch(0.20 0.02 55 / 0.15), transparent 55%);
     background-attachment: fixed;
     min-height: 100dvh;
+    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
